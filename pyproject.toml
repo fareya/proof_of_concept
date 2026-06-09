@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-diagnostic"
+version = "0.1.0"
+description = "Adaptive Diagnostic Dialogue: conversation-as-assessment for misconception-level knowledge estimation"
+readme = "README.md"
+requires-python = ">=3.9"
+# Core loop runs on numpy alone so the synthetic experiment + smoke test stay light.
+dependencies = [
+    "numpy>=1.23",
+]
+
+[project.optional-dependencies]
+# Real estimators (DKT/AKT/simpleKT via pyKT) and metrics.
+kt = [
+    "torch>=2.0",
+    "scikit-learn>=1.1",
+    "pyyaml>=6.0",
+]
+# Natural-language examiner + estimator agents (RQ3).
+agents = [
+    "langgraph>=0.2",
+    "openai>=1.0",
+]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+adaptive-diagnostic = "adaptive_diagnostic.experiment.run_adaptivity:main"
+
+[tool.setuptools.packages.find]
+include = ["adaptive_diagnostic*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
