@@ -27,6 +27,9 @@ data/raw/
 data/processed/
 *.csv
 *.parquet
+# ...but keep the tiny in-format fixtures the loader tests parse.
+!adaptive_diagnostic/data/fixtures/
+!adaptive_diagnostic/data/fixtures/*.csv
 
 # OS / editor
 .DS_Store
