@@ -75,7 +75,10 @@ tests/
 
 ## Next steps (maps to the gated timeline)
 
-- **W1–2 (G0):** replace `data/loaders.py` stubs with pyKT/ASSISTments + Eedi loaders.
+- **W1–2 (G0):** ✅ `data/loaders.py` now parses long-format/pyKT-triplet KT logs and
+  Eedi MCQ items (with distractor→misconception maps); see `tests/test_loaders.py` and
+  the in-format samples under `data/fixtures/`. Remaining: point them at the real
+  licensed files and calibrate IRT item parameters (or use the DKT estimator).
 - **W3–5 (G1):** swap in `estimator/dkt.py`; run `run_adaptivity` on real sequences;
   confirm the adaptive policy hits the fixed policy's full-length AUC with ≥25% fewer
   items, stable across ≥3 seeds.

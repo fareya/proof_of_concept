@@ -1,0 +1,7 @@
+user_id,item_id,kc,correct,chosen_option,misconception,timestamp
+1,10,0,1,A,,100
+1,11,0,0,C,5,101
+1,12,1,0,B,7,102
+2,10,0,0,B,4,100
+2,12,1,1,A,,103
+2,11,0,0,C,5,104
